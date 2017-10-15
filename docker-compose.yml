@@ -1,0 +1,28 @@
+version: "2"
+services:
+  betelgeuse_web:
+    build: ./docker
+    container_name: betelgeuse_web
+    ports:
+      - "32776:80"
+    depends_on:
+      - betelgeuse_db
+    links:
+      - betelgeuse_db
+    volumes:
+      - ./betelgeuse:/var/www/betelgeuse
+    tty: true
+
+  betelgeuse_db:
+    image: mysql:5.6.37
+    container_name: betelgeuse_db
+    environment:
+      MYSQL_ROOT_PASSWORD:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_DATABASE: betelgeuse
+      MYSQL_HOST: "localhost"
+    ports:
+      - 3306:3306
+    expose:
+      - 3306
+    tty: true
