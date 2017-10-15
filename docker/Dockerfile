@@ -4,3 +4,5 @@ FROM amazonlinux:2017.03
 
 # EXPOSE 80
 # CMD ["/usr/sbin/apachectl", "-D", "FOREGROUND"]
+
+# RUN ["/bin/bash", "-c", "source /etc/profile"]

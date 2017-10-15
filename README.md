@@ -30,3 +30,10 @@ $ ansible-playbook -i ansible/inventories/{environment} site.yml --check
 $ cd /path/to/betelgeuse/
 $ ansible-playbook -i ansible/inventories/{environment} site.yml
 ```
+
+### docker exec web container
+
+```
+$ cd /path/to/betelgeuse/
+$ docker exec -it betelgeuse_web /bin/bash --login
+```
