@@ -1,0 +1,7 @@
+- name: yum update
+  yum: name=* state=latest
+  tags: nginx
+
+- name: install apache
+  yum: name=httpd
+  tags: nginx

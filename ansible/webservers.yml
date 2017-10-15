@@ -1,0 +1,5 @@
+---
+- hosts: webservers
+  connection: docker
+  roles:
+    - apache
