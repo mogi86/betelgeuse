@@ -74,3 +74,23 @@
 - name: set ruby version
   shell: /bin/bash -lc "rbenv global 2.4.2"
   tags: ruby
+
+- name: gem update
+  shell: /bin/bash -lc "gem update --system"
+  tags: ruby
+
+- name: install nokogiri
+  shell: /bin/bash -lc "gem install nokogiri -v 1.8.1"
+  tags: ruby
+
+- name: install rails
+  shell: /bin/bash -lc "gem install rails -v 5.1.4"
+  tags: ruby
+
+- name: install bundle
+  shell: /bin/bash -lc "gem install bundle"
+  tags: ruby
+
+- name: rbenv rehash
+  shell: /bin/bash -lc "rbenv rehash"
+  tags: ruby
