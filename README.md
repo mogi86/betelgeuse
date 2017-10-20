@@ -36,4 +36,7 @@ $ ansible-playbook -i ansible/inventories/{environment} site.yml
 ```
 $ cd /path/to/betelgeuse/
 $ docker exec -it betelgeuse_web /bin/bash --login
+
+ユーザ名指定する場合
+docker exec -it -u rails betelgeuse_web /bin/bash --login
 ```

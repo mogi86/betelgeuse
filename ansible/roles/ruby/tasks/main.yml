@@ -94,3 +94,13 @@
 - name: rbenv rehash
   shell: /bin/bash -lc "rbenv rehash"
   tags: ruby
+
+#- name: change permission
+#  file: path=/var/www/betelgeuse state=directory recurse=yes owner=rails group=rails mode=0755
+#  tags: ruby
+
+#- name: install gemfile packege
+#  become: yes
+#  become_user: rails
+#  shell: /bin/bash -lc "cd /var/www/betelgeuse & bundle install --path vendor/bundle"
+#  tags: ruby
