@@ -5,6 +5,7 @@ services:
     container_name: betelgeuse_web
     ports:
       - "32776:80"
+      - "3000:3000"
     depends_on:
       - betelgeuse_db
     links:

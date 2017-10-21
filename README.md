@@ -49,3 +49,10 @@ docker exec -it -u rails betelgeuse_web /bin/bash --login
 $ cd /var/www/betelgeuse/
 $ bundle install --path vendor/bundle
 ```
+
+### exec rails server
+
+```
+$ cd /var/www/betelgeuse/
+$ bundle exec rails server -b 0.0.0.0 --environment=development
+```
