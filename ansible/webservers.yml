@@ -3,7 +3,7 @@
 #  become: true
   connection: docker
   roles:
+    - common
     - user
     - apache
-    - common
     - ruby

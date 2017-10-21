@@ -1,24 +1,3 @@
-- name: install packages
-  yum: name={{item}}
-  with_items:
-    - git
-    - gcc-c++
-    - patch
-    - readline
-    - readline-devel
-    - zlib
-    - zlib-devel
-    - libyaml-devel
-    - libffi-devel
-    - openssl-devel
-    - make
-    - bzip2
-    - autoconf
-    - automake
-    - libtool
-    - bison
-  tags: ruby
-
 - name: check /usr/local/rbenv exist
   stat: path=/usr/local/rbenv
   register: is_exist_rbenv
