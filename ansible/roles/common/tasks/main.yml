@@ -21,6 +21,7 @@
     - automake
     - libtool
     - bison
+    - mysql-devel
   tags: common
 
 - name: install sudo
