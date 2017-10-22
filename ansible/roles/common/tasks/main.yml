@@ -22,6 +22,10 @@
     - libtool
     - bison
     - mysql-devel
+    - httpd-devel
+    - curl
+    - curl-devel
+    - which
   tags: common
 
 - name: install sudo

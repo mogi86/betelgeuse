@@ -79,8 +79,26 @@
   file: path=/var/www/betelgeuse state=directory recurse=yes owner=rails group=rails
   tags: ruby
 
-#- name: install gemfile packege
-#  become: yes
-#  become_user: rails
-#  shell: /bin/bash -lc "cd /var/www/betelgeuse & bundle install --path vendor/bundle"
-#  tags: ruby
+- name: install gemfile packege
+  become: yes
+  become_user: rails
+  shell: /bin/bash -lc "bundle install --path vendor/bundle"
+  args:
+    chdir: /var/www/betelgeuse/
+  tags: ruby
+
+- name: install passenger
+  shell: /bin/bash -lc "gem install passenger -v 5.1.11"
+  tags: ruby
+
+- name: install passenger-module
+  shell: /bin/bash -lc "passenger-install-apache2-module --auto --languages=ruby"
+  tags: ruby
+
+- name: copy passenger.conf
+  template: src=passenger.conf.j2 dest=/etc/httpd/conf.d/passenger.conf
+  tags: ruby
+
+- name: httpd server restart
+  service: name=httpd state=restarted
+  tags: ruby
