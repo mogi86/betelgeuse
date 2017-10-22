@@ -84,3 +84,7 @@
 #  become_user: rails
 #  shell: /bin/bash -lc "cd /var/www/betelgeuse & bundle install --path vendor/bundle"
 #  tags: ruby
+
+- name: install passenger
+  shell: /bin/bash -lc "gem install passenger"
+  tags: ruby
