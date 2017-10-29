@@ -2,6 +2,7 @@ LoadModule passenger_module /usr/local/rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/
 <IfModule mod_passenger.c>
  PassengerRoot /usr/local/rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/passenger-5.1.11
  PassengerDefaultRuby /usr/local/rbenv/versions/2.4.2/bin/ruby
+ PassengerStartTimeout 300
 </IfModule>
 
 <VirtualHost *:80>

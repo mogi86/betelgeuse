@@ -100,5 +100,5 @@
   tags: ruby
 
 - name: httpd server restart
-  service: name=httpd state=restarted
+  service: name=httpd state=restarted enabled=yes
   tags: ruby

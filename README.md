@@ -17,13 +17,6 @@ $ docker-compose up -d
 
 - {environment}には対象環境名(localなど)を入れる
 
-### dry run
-
-```
-$ cd /path/to/betelgeuse/
-$ ansible-playbook -i ansible/inventories/{environment} site.yml --check
-```
-
 ### exce rovisioning
 
 ```
