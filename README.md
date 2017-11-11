@@ -34,14 +34,34 @@ $ docker exec -it betelgeuse_web /bin/bash --login
 docker exec -it -u rails betelgeuse_web /bin/bash --login
 ```
 
-# Setup
+# DB setup
 
-### setup rails
+### ridgepole
+
+- dry run
 
 ```
-$ cd /var/www/betelgeuse/
+$ bundle exec ridgepole -c config/database.yml -E development --apply --dry-run -f db/Schemafile
+```
+
+- exec
+
+```
+$ bundle exec ridgepole -c database.yml -E development --apply -f db/Schemafile
+```
+
+# Add gem
+- 初回プロビジョニング以降に追加のgemがある場合、以下のコマンドを実行する。
+
+### gem install
+
+```
+$ cd /var/www/betelgeuse
 $ bundle install --path vendor/bundle
 ```
+
+# Rails server
+- `rails server`を使用する場合、以下のコマンドを実行する。
 
 ### exec rails server
 
